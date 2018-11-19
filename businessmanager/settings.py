@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['BM_SECTRET_KEY']
+SECRET_KEY = os.getenv('BM_SECTRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
@@ -147,9 +147,9 @@ DEFAULT_FROM_EMAIL = 'Ezequiel Contreras<ezequiel.contreras57@gmail.com>'
 SENDGRID_API_KEY=os.getenv('SENDGRID_API_KEY_PRODUCTION')
 
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+#import dj_database_url
+#db_from_env = dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(db_from_env)*/
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
